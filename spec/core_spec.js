@@ -35,4 +35,23 @@ describe('Basket', function() {
     basket.addBook(2);
     expect(basket.getTotalPrice()).toEqual((80*0.95) + 40);
   });
+
+  it("should receive discount with 3 different books and 1 equal", function() {
+    var basket = new core.Basket();
+    basket.addBook(1);
+    basket.addBook(1);
+    basket.addBook(2);
+    expect(basket.getTotalPrice()).toEqual((80*0.95) + 40);
+  });
+
+  it("should receive discount with 4 different books and 2 equal", function() {
+    var basket = new core.Basket();
+    basket.addBook(1);
+    basket.addBook(1);
+    basket.addBook(2);
+    basket.addBook(2);
+    basket.addBook(3);
+    basket.addBook(4);
+    expect(basket.getTotalPrice()).toEqual((160*0.75) + (80*0.95));
+  });
 });
