@@ -41,7 +41,8 @@ describe('Basket', function() {
     basket.addBook(1);
     basket.addBook(1);
     basket.addBook(2);
-    expect(basket.getTotalPrice()).toEqual((80*0.95) + 40);
+    basket.addBook(3);
+    expect(basket.getTotalPrice()).toEqual((120*0.80) + 40);
   });
 
   it("should receive discount with 4 different books and 2 equal", function() {
